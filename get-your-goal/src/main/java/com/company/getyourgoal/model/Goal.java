@@ -3,6 +3,7 @@ package com.company.getyourgoal.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -13,6 +14,7 @@ import java.util.Objects;
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Integer id;
+        @NotEmpty
         private String goalTitle;
         private String goal;
         private String userName;

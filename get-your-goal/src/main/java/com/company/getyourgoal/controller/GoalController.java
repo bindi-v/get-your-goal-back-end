@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,7 +30,7 @@ public class GoalController {
 
     @PostMapping("/goals")
     @ResponseStatus(HttpStatus.CREATED)
-    public Goal createGoal(@RequestBody Goal goal) {
+    public Goal createGoal(@RequestBody @Valid Goal goal) {
         goalRepository.save(goal);
         return goal;
     }
