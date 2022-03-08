@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
     @Entity
@@ -19,6 +21,14 @@ import java.util.Objects;
         private String goal;
         private String userName;
         private Integer userId;
+        @Column(name = "goalPosted_at")
+        private Date goalPostedAt = new Date();
+
+        @Column(name = "updated_at")
+        private Date goalUpdatedAt = new Date();
+
+        @OneToMany(mappedBy = "goalId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+        private List<Comment> comments;
 
         public Goal() {
         }
@@ -71,17 +81,41 @@ import java.util.Objects;
             this.userId = userId;
         }
 
+        public Date getGoalPostedAt() {
+            return goalPostedAt;
+        }
+
+        public void setGoalPostedAt(Date goalPostedAt) {
+            this.goalPostedAt = goalPostedAt;
+        }
+
+        public Date getGoalUpdatedAt() {
+            return goalUpdatedAt;
+        }
+
+        public void setGoalUpdatedAt(Date goalUpdatedAt) {
+            this.goalUpdatedAt = goalUpdatedAt;
+        }
+
+        public List<Comment> getComments() {
+            return comments;
+        }
+
+        public void setComments(List<Comment> comments) {
+            this.comments = comments;
+        }
+
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             Goal goal1 = (Goal) o;
-            return Objects.equals(id, goal1.id) && Objects.equals(goalTitle, goal1.goalTitle) && Objects.equals(goal, goal1.goal) && Objects.equals(userName, goal1.userName) && Objects.equals(userId, goal1.userId);
+            return Objects.equals(id, goal1.id) && Objects.equals(goalTitle, goal1.goalTitle) && Objects.equals(goal, goal1.goal) && Objects.equals(userName, goal1.userName) && Objects.equals(userId, goal1.userId) && Objects.equals(goalPostedAt, goal1.goalPostedAt) && Objects.equals(goalUpdatedAt, goal1.goalUpdatedAt) && Objects.equals(comments, goal1.comments);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(id, goalTitle, goal, userName, userId);
+            return Objects.hash(id, goalTitle, goal, userName, userId, goalPostedAt, goalUpdatedAt, comments);
         }
 
         @Override
@@ -92,6 +126,9 @@ import java.util.Objects;
                     ", goal='" + goal + '\'' +
                     ", userName='" + userName + '\'' +
                     ", userId=" + userId +
+                    ", goalPostedAt=" + goalPostedAt +
+                    ", goalUpdatedAt=" + goalUpdatedAt +
+                    ", comments=" + comments +
                     '}';
         }
     }
