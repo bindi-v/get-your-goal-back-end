@@ -4,7 +4,6 @@ package com.company.getyourgoal.viewmodel;
 import com.company.getyourgoal.model.Comment;
 import com.company.getyourgoal.model.Goal;
 
-import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -68,7 +67,7 @@ public class UserViewModel {
         this.password = password;
     }
 
-    public List<Goal> getGoals() {
+    public List<Goal> getGoals(Goal goal) {
         return goals;
     }
 
