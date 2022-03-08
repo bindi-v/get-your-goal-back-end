@@ -20,14 +20,10 @@ import static org.junit.Assert.*;
 public class UserControllerTest {
     @Autowired
     UserRepository userRepository;
-    @Autowired
-    GoalRepository goalRepository;
-
 
     @Before
     public void setUp() throws Exception {
         userRepository.deleteAll();
-        goalRepository.deleteAll();
     }
 
     @Test
