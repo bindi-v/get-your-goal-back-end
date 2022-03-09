@@ -10,20 +10,21 @@ import java.util.Objects;
 
 public class UserViewModel {
 
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String email;
-    private String username;
+    private String userName;
     private String password;
     private List<Goal> goals = new ArrayList<>();
     private List<Comment> comments = new ArrayList<>();
 
-    public int getId() {
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,12 +52,12 @@ public class UserViewModel {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -67,7 +68,7 @@ public class UserViewModel {
         this.password = password;
     }
 
-    public List<Goal> getGoals(Goal goal) {
+    public List<Goal> getGoals() {
         return goals;
     }
 
@@ -88,11 +89,25 @@ public class UserViewModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserViewModel that = (UserViewModel) o;
-        return id == that.id && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(email, that.email) && Objects.equals(username, that.username) && Objects.equals(password, that.password) && Objects.equals(goals, that.goals) && Objects.equals(comments, that.comments);
+        return Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(email, that.email) && Objects.equals(userName, that.userName) && Objects.equals(password, that.password) && Objects.equals(goals, that.goals) && Objects.equals(comments, that.comments);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, email, username, password, goals, comments);
+        return Objects.hash(id, firstName, lastName, email, userName, password, goals, comments);
+    }
+
+    @Override
+    public String toString() {
+        return "UserViewModel{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", goals=" + goals +
+                ", comments=" + comments +
+                '}';
     }
 }
