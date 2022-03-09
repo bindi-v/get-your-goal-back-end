@@ -16,11 +16,12 @@ import java.util.Objects;
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Integer id;
-        @NotEmpty
+
         private String goalTitle;
         private String goal;
         private String userName;
         private Integer userId;
+
         @Column(name = "goalPosted_at")
         private Date goalPostedAt = new Date();
 

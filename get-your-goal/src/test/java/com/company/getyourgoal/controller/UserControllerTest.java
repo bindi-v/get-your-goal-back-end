@@ -31,7 +31,7 @@ public class UserControllerTest {
         User user = new User();
         user.setFirstName("John");
         user.setLastName("Darren");
-        user.setUsername("Jdarren");
+        user.setUserName("Jdarren");
         user.setPassword("password");
         user.setEmail("darren@gmail.com");
 
@@ -53,7 +53,7 @@ public class UserControllerTest {
         User user = new User();
         user.setFirstName("John");
         user.setLastName("Darren");
-        user.setUsername("Jdarren");
+        user.setUserName("Jdarren");
         user.setPassword("password");
         user.setEmail("darren@gmail.com");
 
@@ -61,7 +61,7 @@ public class UserControllerTest {
 
         user.setFirstName("John updated");
         user.setLastName("Darren updated");
-        user.setUsername("Jdarren");
+        user.setUserName("Jdarren");
         user.setPassword("password");
         user.setEmail("darren@gmail.com");
 
@@ -77,7 +77,7 @@ public class UserControllerTest {
         User user = new User();
         user.setFirstName("John");
         user.setLastName("Darren");
-        user.setUsername("Jdarren");
+        user.setUserName("Jdarren");
         user.setPassword("password");
         user.setEmail("darren@gmail.com");
 
@@ -86,7 +86,7 @@ public class UserControllerTest {
         user = new User();
         user.setFirstName("Sarah");
         user.setLastName("Jim");
-        user.setUsername("Jsarah");
+        user.setUserName("Jsarah");
         user.setPassword("password");
         user.setEmail("sarah@gmail.com");
 
@@ -103,7 +103,7 @@ public class UserControllerTest {
         User user = new User();
         user.setFirstName("John");
         user.setLastName("Darren");
-        user.setUsername("Jdarren");
+        user.setUserName("Jdarren");
         user.setPassword("password");
         user.setEmail("darren@gmail.com");
 
