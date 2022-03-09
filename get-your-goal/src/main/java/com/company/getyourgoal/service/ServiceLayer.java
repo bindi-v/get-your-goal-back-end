@@ -60,16 +60,19 @@ public class ServiceLayer {
     }
 
 
-//   @Transactional
     public UserViewModel findOneUser(int id) {
         Optional<User> user = userRepository.findById(id);
-        return user.isPresent() ? builUserViewModel(user.get()): null;
+        return user.isPresent() ? buildUserViewModel(user.get()): null;
     }
 
-    private UserViewModel builUserViewModel(User user) {
-        Optional<Goal> goal =goalRepository.findById(user.getId());//back to check goal id
+    private UserViewModel buildUserViewModel(User user) {
+        Optional<Goal> goal = goalRepository.findById(user.getId());//back to check goal id
 
         Optional<Comment> comment = commentRepository.findById(user.getId()); //back to check comment id
+
+        List<Goal> goalList = goalRepository.findAllGoalsByUserId(user.getId());
+
+        List<Comment> commentList = commentRepository.findAllCommentsByUserId(user.getId());
 
         UserViewModel uvm = new UserViewModel();
         uvm.setId(user.getId());
@@ -78,8 +81,8 @@ public class ServiceLayer {
         uvm.setUserName(user.getUserName());
         uvm.setEmail(user.getEmail());
         uvm.setPassword(user.getPassword());
-//        uvm.setGoals(goal.get().ge);
-//        uvm.setComments(commentList);
+        uvm.setGoals(goalList);
+        uvm.setComments(commentList);
 
         return uvm;
     }
@@ -89,7 +92,7 @@ public class ServiceLayer {
         List<UserViewModel> uvmList = new ArrayList<>();
 
         for (User user : userList) {
-            UserViewModel uvm = builUserViewModel(user);
+            UserViewModel uvm = buildUserViewModel(user);
             uvmList.add(uvm);
         }
         return uvmList;
@@ -105,8 +108,8 @@ public class ServiceLayer {
         user.setEmail(viewModel.getEmail());
         user.setUserName(viewModel.getUserName());
         user.setPassword(viewModel.getPassword());
-//        user.setGoals(viewModel.getListGoals());
-//        user.setComments(viewModel.getListComments());
+        user.setGoals(viewModel.getGoals());
+        user.setComments(viewModel.getComments());
         userRepository.save(user);
 
         List<Goal> goalList = goalRepository.findAllGoalsByUserId(user.getId());
@@ -114,9 +117,9 @@ public class ServiceLayer {
                 .forEach(goal -> goalRepository.deleteById(goal.getId()));
         List<Goal> goals =viewModel.getGoals();
         goals.stream()
-                .forEach(goal -> {
-                    goal.setUserId(viewModel.getId());
-                    goal=goalRepository.save(goal);
+                .forEach(g -> {
+                    g.setUserId(viewModel.getId());
+                    g = goalRepository.save(g);
                 });
 
     }
