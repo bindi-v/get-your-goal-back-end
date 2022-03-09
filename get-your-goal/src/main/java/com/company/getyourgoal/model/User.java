@@ -26,6 +26,7 @@ public class User implements Serializable {
     private String userName;
     @NotEmpty
     private String password;
+
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Goal> goals;
 

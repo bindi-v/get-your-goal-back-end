@@ -1,3 +1,4 @@
+
 package com.company.getyourgoal.service;
 
 import com.company.getyourgoal.model.Comment;
@@ -135,3 +136,4 @@ public class ServiceLayer {
     }
 
 }
+
