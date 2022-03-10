@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="get-your-goal" />
+        <module name="eureka-service-registry" />
+        <module name="random-goal-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-service-registry" target="1.8" />
+      <module name="get-your-goal" target="1.8" />
+      <module name="random-goal-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka-service-registry" options="-parameters" />
+      <module name="get-your-goal" options="-parameters" />
+      <module name="random-goal-service" options="-parameters" />
+    </option>
+  </component>
+</project>
