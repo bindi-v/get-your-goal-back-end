@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/eureka-service-registry/eureka-service-registry/eureka-service-registry.iml" filepath="$PROJECT_DIR$/eureka-service-registry/eureka-service-registry/eureka-service-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/get-your-goal/get-your-goal.iml" filepath="$PROJECT_DIR$/get-your-goal/get-your-goal.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/get-your-goal-back-end.iml" filepath="$PROJECT_DIR$/.idea/get-your-goal-back-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/random-goal-service/random-goal-service/random-goal-service.iml" filepath="$PROJECT_DIR$/random-goal-service/random-goal-service/random-goal-service.iml" />
     </modules>
   </component>
 </project>
