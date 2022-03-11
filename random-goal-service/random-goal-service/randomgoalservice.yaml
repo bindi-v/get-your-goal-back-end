@@ -1,0 +1,36 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Random Goal Service",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7979",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/randomGoals": {
+      "get": {
+        "tags": [
+            "random-goal-controller"
+        ],
+        "operationId": "getRandomGoal",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}

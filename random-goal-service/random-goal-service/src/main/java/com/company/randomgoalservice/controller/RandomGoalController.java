@@ -18,22 +18,22 @@ public class RandomGoalController {
     private Random randomGoal = new Random();
 
     public RandomGoalController() {
-        goalList.add("Become an inspiration to others.\n");
-        goalList.add("Master a difficult skill.\n");
-        goalList.add("Become a thought leader in your industry.\n");
-        goalList.add("Learn about how to become a millionaire.\n");
-        goalList.add("Go on a trip around the world.\n");
-        goalList.add("Travel to your dream country.\n");
-        goalList.add("Double your personal income.\n");
-        goalList.add("Get promoted to an executive role at your company.\n");
-        goalList.add("Donate to a charity annually.\n");
-        goalList.add("Worry Less, Smile More!\n");
+        goalList.add("Become an inspiration to others.");
+        goalList.add("Master a difficult skill.");
+        goalList.add("Become a thought leader in your industry.");
+        goalList.add("Learn about how to become a millionaire.");
+        goalList.add("Go on a trip around the world.");
+        goalList.add("Travel to your dream country.");
+        goalList.add("Double your personal income.");
+        goalList.add("Get promoted to an executive role at your company.");
+        goalList.add("Donate to a charity annually.");
+        goalList.add("Worry Less, Smile More!");
     }
 
     @GetMapping("/randomGoals")
     @ResponseStatus(HttpStatus.OK)
     public String getRandomGoal() {
-        int whichGoal = randomGoal.nextInt(9);
+        int whichGoal = randomGoal.nextInt(10);
         return goalList.get(whichGoal);
     }
 }
