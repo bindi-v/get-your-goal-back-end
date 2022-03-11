@@ -57,7 +57,7 @@ Java, Spring Boot, Spring Data Jpa, MySQL Driver, Spring Web, Eureka server, jUn
 
 ## Usage
 
-Application can be Run in IntelliJ IDEA or you can use the deployed to heroku link.
+Application can be Run in IntelliJ IDEA 
 
 ## Test
 
@@ -77,19 +77,20 @@ Bindu Vaghela, Dereje Ayele
 
 ## Contact
 
-* GitHub :[bindi-v](https://github.com/bindi-v)
+* GitHub : Bindu - [bindi-v](https://github.com/bindi-v)
           
-          [dereatom](https://github.com/dereatom)
+* GitHub : Dereje - [dereatom](https://github.com/dereatom)
 
-* Email : bindi.vaghela@gmail.com 
-
+* Email : bindi.vaghela@gmail.com , derejeatomsa2@gmail.com
 
 ## Questions
 
 If you have any questions, please reach out to our Github.
 
-### Deployed Link
+### Link
 
-* [The URL of the GitHub repository](https://github.com/bindi-v/tech-news-java-api)
+* [The URL of the Back end GitHub repository](https://github.com/bindi-v/tech-news-java-api)
+
+* [The URL of the GetYourGoal Front End](https://github.com/bindi-v/get-your-goal-back-end)
 
 #### Thank you for visiting my Github!
